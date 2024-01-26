@@ -1,3 +1,14 @@
+<?php
+    $maiuscole = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    $minuscole = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    $numeri = ["0","1","2","3","4","5","6","7","8","9"];
+    $simboli = ["!","£","$","%","&","/","(","=",")","?","@"];
+    if(isset($_GET["number"]) && $_GET["number"] != ""){
+        $lunghezza_psw = $_GET["number"];
+        echo $lunghezza_psw;
+        
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +19,22 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+    <!-- Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <form action="./index.php" method="GET">
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="number" class="form-control" id="number" name="number" placeholder="Inserire lunghezza password">
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-success">Invia</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
