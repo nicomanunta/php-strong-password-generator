@@ -20,9 +20,9 @@
 
             $count_caratteri_totali = count($caratteri_totali);
 
-            for($i = 0; $i < $lunghezza - 4; $i++){
-                
-            }
+            $password.= array_rand($caratteri, ($lunghezza - 4))
+           
+            return
 
             
         }
