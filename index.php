@@ -8,7 +8,7 @@
             $minuscole = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
             $numeri = ["0","1","2","3","4","5","6","7","8","9"];
             $simboli = ["!","£","$","%","&","/","(","=",")","?","@"];
-            $caratteri_totali = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","!","£","$","%","&","/","(","=",")","?","@"]
+            $caratteri_totali = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","!","£","$","%","&","/","(","=",")","?","@"];
 
             // creo una variabile password, inizialmente vuota, 
             $password = "";
@@ -18,14 +18,20 @@
             $password .= $numeri[array_rand($numeri, 1)];
             $password .= $simboli[array_rand($simboli, 1)];
 
-            // $count_caratteri_totali = count($caratteri_totali);
-
-            $password.= array_rand($caratteri_totali, ($lunghezza - 4))
-           
-            return
-
             
+            
+            $array_password = array_rand($caratteri_totali, ($lunghezza - 4));
+            
+            
+            foreach ($array_password as $indice){
+                $password.= $caratteri_totali[$indice];
+            }
+            $password = str_shuffle($password);
+            return $password;
         }
+        $password_generata = createPassword($lunghezza);
+        
+        echo  $password_generata;
 }
 ?>
 <!DOCTYPE html>
