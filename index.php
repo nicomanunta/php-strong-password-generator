@@ -18,9 +18,9 @@
             $password .= $numeri[array_rand($numeri, 1)];
             $password .= $simboli[array_rand($simboli, 1)];
 
-            $count_caratteri_totali = count($caratteri_totali);
+            // $count_caratteri_totali = count($caratteri_totali);
 
-            $password.= array_rand($caratteri, ($lunghezza - 4))
+            $password.= array_rand($caratteri_totali, ($lunghezza - 4))
            
             return
 
